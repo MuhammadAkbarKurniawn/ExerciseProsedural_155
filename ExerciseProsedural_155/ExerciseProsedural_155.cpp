@@ -6,22 +6,51 @@ double rerata(double a, double b) {
 }
 
 string status(double d, double e) {
-    if (d <= 70 && e > 80)
-        return "lulus";
+    if (d > 80 && e >= 70)
+        return "Diterima";
     else
-        return "gagal";
+        return "Ditolak";
 }
 
 int main()
 {
     double nilM, nilB;
+    string nama;
+    int pilihan;
+    int a[20];
 
-    cout << "Masukkan nilai Matematika : ";
-    cin >> nilM;
-    cout << "Masukkan nilai Bahasa Inggris : ";
-    cin >> nilB;
 
-    cout << "status kelulusan" << status(rerata(nilM, nilB),nilM
-    );
+    do {
+        cout << "1. Mengisi Data" << endl;
+        cout << "2. Exit" << endl;
+        cout << "pilihan 1/2 = ";
+        cin >> pilihan;
+
+        switch (pilihan) {
+            case 1 :
+                for (int i = 0; i < 1; i++) {
+                    cout << "Data ke - " << " : ";
+                    cin >> a[20];
+                }
+            cout << "Masukkan Nama : ";
+            cin >> nama;
+            cout << "Masukkan nilai Matematika : ";
+            cin >> nilM;
+            cout << "Masukkan nilai Bahasa Inggris : ";
+            cin >> nilB;
+            
+
+            cout << "  " << nama;
+            cout << "  " << status(rerata(nilM, nilB), nilM) << endl;
+            break;
+
+
+            case 2:
+                break;
+            defaut :
+                cout << "Pilihan Salah" << endl;
+                break;
+        } 
+    } while (pilihan != 2);
 }
 
